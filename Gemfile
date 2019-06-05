@@ -55,3 +55,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #has_secure_passwordメソッドを使用するためのbcrypt
 gem 'bcrypt', '3.1.11'
+
+#CarrierWaveをインストール
+gem 'carrierwave'
+gem 'mini_magick'
