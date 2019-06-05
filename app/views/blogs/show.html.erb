@@ -1,0 +1,11 @@
+<h1>ブログ詳細画面</h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @blog.image.url %>
+</p>
+<p>内容: <%= @blog.content %></p>
+
+<%= link_to '編集する', edit_blog_path(@blog) %>
+<p><%= link_to '一覧へ戻る', blogs_path %></p>
