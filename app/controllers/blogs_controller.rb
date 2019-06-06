@@ -16,10 +16,8 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.create(blog_params)
     if @blog.save
-      # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
       redirect_to blogs_path, notice: "ブログを作成しました！"
     else
-      #入力フォームを再描画
       render 'new'
     end
   end
@@ -48,6 +46,7 @@ class BlogsController < ApplicationController
 
   def confirm
     @blog = Blog.new(blog_params)
+    render :new if @blog.invalid?
   end
 
   private
