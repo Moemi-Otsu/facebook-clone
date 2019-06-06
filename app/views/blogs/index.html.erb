@@ -5,6 +5,7 @@
     <p><%= blog.content %></p>
     <p><%= link_to '詳細を確認する', blog_path(blog.id) %>
     <p><%= link_to '編集する', edit_blog_path(blog.id) %></p>
+    <p><%= link_to '削除', blog_path(blog.id), method: :delete %></p>
   <div>
 <% end %>
 <div>
