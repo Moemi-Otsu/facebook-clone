@@ -1,5 +1,8 @@
 <h1>ブログ一覧</h1>
 <p><%= notice %></p>
+
+<p><%= link_to '新規作成', new_blog_path %></p>
+
 <div class="container">
 <% @blogs.each do |blog| %>
   <div class="row">
@@ -12,6 +15,3 @@
   <div>
 <% end %>
 <div>
-
-<%= link_to '新規作成', new_blog_path %>
-<%= link_to 'ブログ一覧画面にもどる', blogs_path %>
