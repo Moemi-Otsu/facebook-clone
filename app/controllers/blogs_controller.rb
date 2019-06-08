@@ -17,7 +17,7 @@ class BlogsController < ApplicationController
     #以下2行を纏めた書き方@blog~
     #@blog = Blog.new(blog_params)
     #@blog.user_id = current_user.id
-    @blog = current_user.blogs.build(blog_params)
+    @blog = current_user.blog.build(blog_params)
     if @blog.save
       redirect_to blogs_path, notice: "ブログを作成しました！"
     else
@@ -50,8 +50,8 @@ class BlogsController < ApplicationController
   def confirm
     #以下2行を纏めた書き方@blog~
     #@blog = Blog.new(blog_params)
-    #@blog.user_id = current_user.id
-    @blog = current_user.blogs.build(blog_params)
+    #@blog.user_id = current_user.idgit 
+    @blog = current_user.blog.build(blog_params)
     render :new if @blog.invalid?
   end
 
