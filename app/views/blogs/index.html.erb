@@ -1,15 +1,22 @@
-  <div class="col-md-7">
-      <h1>ブログ一覧</h1>
-  <%= notice %>
-      <p><%= link_to '新規作成', new_blog_path %></p>
+<%= notice %>
+    <div class="new-box">
+      <p class="new-box-head">投稿を作成</p>
+      <ul>
+        <% @blogs.each do |blog| %>
+        <li><%= blog.user.name %>さん、今何してる？</li>
+        <% end %>
+      </ul>
+      <p class="btn-new"><%= link_to '新規作成', new_blog_path %></p>
+    </div>
           <% @blogs.each do |blog| %>
 
           <div class="blog-box">
-            <p><%= blog.content %></p>
-            <p><%= blog.user.name %></p>
-            <p><%= image_tag blog.image %></p>
-            <p><%= link_to '編集', edit_blog_path(blog.id) %></p>
-            <p><%= link_to '削除', blog_path(blog.id), method: :delete, data: {confirm:'本当に削除していいですか？'} %></p>
-          <div>
+            <p class="user-name"><a href=""><%= blog.user.name %></a></p>
+            <ul>
+              <li><%= link_to '削除', blog_path(blog.id), method: :delete, data: {confirm:'本当に削除していいですか？'} %></li>
+              <li><%= link_to '編集', edit_blog_path(blog.id) %></li>
+            </ul>
+            <p class="blog-content"><%= blog.content %></p>
+            <%= image_tag blog.image %>
+          </div>
           <% end %>
-        </div><!--col-md-7-->

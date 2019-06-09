@@ -5,7 +5,7 @@
     <meta name="description" content="ディスクリプション">
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
@@ -14,33 +14,42 @@
     <% end %>
 
     <header>
-      <div class="logo"><p>facebook</p></div>
-      <nav>
-      <% if logged_in? %>
-        <%= link_to "Profile", user_path(current_user.id) %>
-        <%= link_to "Logout", session_path(current_user.id), method: :delete %>
-      <% else %>
-        <%= link_to "Sign up", new_user_path %>
-        <%= link_to "Login", new_session_path %>
-      <% end %>
-      </nav>
+      <div class="inner">
+        <div class="logo"><img src="/images/logo.gif" width="24" height="24"></div>
+        <nav>
+        <% if logged_in? %>
+          <%= link_to "プロフィール", user_path(current_user.id) %>
+          <%= link_to "ログアウト", session_path(current_user.id), method: :delete %>
+        <% else %>
+          <%= link_to "サインアップ", new_user_path %>
+          <%= link_to "ログイン", new_session_path %>
+        <% end %>
+        </nav>
+      </div>
     </header>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-2">
-          <p>左からむ</p>
-        </div>
-      <div class="col-md-7">
+    <div class="wrapper clearfix">
+      <div class="left-col">
+        <ul>
+          <li class="current"><a href="/blogs">ニュースフィード</a></li>
+          <li>Messenger</li>
+          <li>Watch</li>
+        </ul>
+        <h3>発見</h3>
+        <ul>
+          <li>グループ</li>
+          <li>Facebookページ</li>
+          <li>イベント</li>
+          <li>友達一覧</li>
+          <li>募金キャンペーン</li>
+        </ul>
+      </div>
+      <div class="main-col">
       <%= yield %>
       </div>
-      <div class="col-md-3">
-        <p>右からむ</p>
-      </div>
-      </div><!--row-->
-    </div><!--container-->
-    <footer>
+    </div><!--wrapper-->
+    <!--<div class="footer">
       <p>facebook clone</p>
-    </footer>    
+    </div>-->
   </body>
 </html>

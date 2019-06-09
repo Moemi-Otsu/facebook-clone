@@ -14,12 +14,3 @@
  *= require_tree .
  *= require_self
  */
-
- html {
-  position: relative;
-  min-height: 100%;
-}
-
-body {
-  background-color: #e9ebee;
-}

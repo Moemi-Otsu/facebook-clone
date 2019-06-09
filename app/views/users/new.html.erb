@@ -1,4 +1,5 @@
-<h1>Sign up</h1>
+<div class="new-edit-box user-new-box">
+  <h1>新規登録してログイン</h1>
 
 <% if @user.errors.any? %>
   <div id="error_explanation">
@@ -12,17 +13,18 @@
 <% end %>
 
 <%= form_with(model: @user, local: true) do |f| %>  
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.label :'ユーザー名' %>
+  <%= f.text_field :name, placeholder: 'ユーザー名を入力' %>
 
-  <%= f.label :email %>
-  <%= f.email_field :email %>
+  <%= f.label :'メールアドレス' %>
+  <%= f.email_field :email, placeholder: 'sample@mail.com' %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= f.label :'パスワード' %>
+  <%= f.password_field :password, placeholder: 'パスワードは6文字以上の英数字にしてください。' %>
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
+  <%= f.label :'パスワードの再入力' %>
+  <%= f.password_field :password_confirmation, placeholder: 'パスワード再入力' %>
 
-  <%= f.submit "Create my account" %>
+  <%= f.submit "アカウントの作成" %>
 <% end %>
+</div>

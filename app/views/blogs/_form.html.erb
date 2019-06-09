@@ -9,17 +9,17 @@
       </ul>
     </div>
   <% end %>
-  <div class="blog_title">
-    <%= form.label :image %>
+  <div class="blog_image">
+    <%= form.label :'画像アップロード' %>
     <%= image_tag(@blog.image.url) if @blog.image && @blog.image.url %>
     <%= form.file_field :image %>
     <%= form.hidden_field :image_cache %>
   </div>
-  <div class="blog_title">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
+  <div class="blog_content">
+    <%= form.label :'投稿を入力' %>
+    <%= form.text_field :content, placeholder: '今なにしてる？' %>
   </div>
-  <%= form.submit %>
+  <%= form.submit '投稿する' %>
 <% end %>
 
-<p><%= link_to '投稿一覧画面にもどる', blogs_path %></p>
+<p class="btn-back"><%= link_to '投稿一覧画面にもどる', blogs_path %></p>
