@@ -363,6 +363,30 @@ div.main-col .user-new-box input {
   margin-bottom: 15px;
 }
 
+div.main-col .user-new-box p.btn-login {
+  margin-top: 20px;
+}
+
+div.main-col .user-box p.btn-login a {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  padding: 12px 0;
+  width: 360px;
+  border-radius: 5px;
+  background: #4469b0;
+  border: 1px solid #2a497b;
+  color: #fff;
+  transition : all 0.2s ease 0s;
+}
+
+div.main-col .user-box p.btn-login a:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #567ac0;
+  transition : all 0.2s ease 0s;
+}
+
 /*clearfix*/
 .clearfix:after {
   content: "";

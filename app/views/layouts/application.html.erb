@@ -29,6 +29,7 @@
     </header>
 
     <div class="wrapper clearfix">
+    <% if logged_in? %>
       <div class="left-col">
         <ul>
           <li class="current"><a href="/blogs">ニュースフィード</a></li>
@@ -44,6 +45,8 @@
           <li>募金キャンペーン</li>
         </ul>
       </div>
+      <% else %>
+      <% end %>
       <div class="main-col">
       <%= yield %>
       </div>

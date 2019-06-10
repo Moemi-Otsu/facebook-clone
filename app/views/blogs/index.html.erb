@@ -2,14 +2,14 @@
     <div class="new-box">
       <p class="new-box-head">投稿を作成</p>
       <ul>
-        <li>さん、今何してる？</li>
+        <li><%= "#{current_user.name}" %>さん、今何してる？</li>
       </ul>
       <p class="btn-new"><%= link_to '新規作成', new_blog_path %></p>
     </div>
           <% @blogs.each do |blog| %>
 
           <div class="blog-box">
-            <p class="user-name"><a href=""><%= blog.user.name %></a></p>
+            <p class="user-name"><%= link_to blog.user.name, user_path(blog.user.id) %></p>
             <ul>
               <li><%= link_to '削除', blog_path(blog.id), method: :delete, data: {confirm:'本当に削除していいですか？'} %></li>
               <li><%= link_to '編集', edit_blog_path(blog.id) %></li>

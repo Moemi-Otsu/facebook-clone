@@ -2,5 +2,9 @@
   <h1>プロフィール</h1>
   <h2><%= @user.name %>さんのページ</h2>
   <p>メールアドレス: <%= @user.email %></p>
-  <p><a href="/blogs">投稿ページを見る</a></p>
+  <% if logged_in? %>
+  <p class="btn-login"><%= link_to '投稿を見る', blogs_path %></p>
+  <% else %>
+  <p class="btn-login"><%= link_to 'ログインする', new_session_path %></p>
+  <% end %>
 </div>
