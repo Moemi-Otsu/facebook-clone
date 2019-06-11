@@ -387,6 +387,23 @@ div.main-col .user-box p.btn-login a:hover {
   transition : all 0.2s ease 0s;
 }
 
+/* notice Flashメッセージ */
+.danger {
+  font-weight: bold;
+  color: #FC6170;
+  width: 100%;
+  background-color: #FFD9D8;
+  padding: 5px 10px;
+}
+
+.notice {
+  font-weight: bold;
+  color: #60a640;
+  width: 100%;
+  background-color: #f8fbb2;
+  padding: 5px 10px;
+}
+
 /*clearfix*/
 .clearfix:after {
   content: "";

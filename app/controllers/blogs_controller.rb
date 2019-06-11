@@ -19,7 +19,7 @@ class BlogsController < ApplicationController
     #@blog.user_id = current_user.id
     @blog = current_user.blogs.build(blog_params)
     if @blog.save
-      redirect_to blogs_path, notice: "ブログを作成しました！"
+      redirect_to blogs_path, notice: "投稿しました！"
     else
       render 'new'
     end
